@@ -19,7 +19,7 @@ namespace AeroGear.Mobile.Core
 
         private static int DEFAULT_WRITE_TIMEOUT = 10;
 
-        public ILogger Logger {
+        public static ILogger Logger {
             get;
             private set;
         }
@@ -63,7 +63,7 @@ namespace AeroGear.Mobile.Core
         public static MobileCore Init(IPlatformInjector injector)
         {
             instance = new MobileCore(null);
-            instance.Logger = injector.CreateLogger();
+            Logger = injector.CreateLogger();
             return instance;
         }
 
