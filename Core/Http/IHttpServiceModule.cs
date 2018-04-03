@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace AeroGear.Mobile.Core.Http
 {
-    interface IHttpServiceModule : IServiceModule 
+    public interface IHttpServiceModule : IServiceModule
     {
-
+        /// <summary>
+        /// Creates a new HttpRequest and prepends common configuration such as certificate pinning, user
+        /// agent headers, etc.
+        /// </summary>
+        /// <returns>a new IHttpRequest object</returns>
+        IHttpRequest NewRequest();
     }
 }
