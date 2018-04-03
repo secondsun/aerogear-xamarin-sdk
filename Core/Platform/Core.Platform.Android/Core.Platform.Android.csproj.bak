@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>AeroGear.Mobile.Core.Platform.Android</RootNamespace>
     <AssemblyName>Core.Platform</AssemblyName>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>

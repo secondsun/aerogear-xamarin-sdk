@@ -24,6 +24,8 @@ namespace AeroGear.Mobile.Core
             private set;
         }
 
+        
+
         private static String appVersion;
 
         public String configFileName {
