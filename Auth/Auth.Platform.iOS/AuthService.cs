@@ -1,12 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
-using AeroGear.Mobile.Auth.Authenticator;
+﻿using AeroGear.Mobile.Auth.Authenticator;
 using AeroGear.Mobile.Auth.Config;
 using AeroGear.Mobile.Auth.Credentials;
 using AeroGear.Mobile.Core;
 using AeroGear.Mobile.Core.Configuration;
 using AeroGear.Mobile.Core.Storage;
-using AeroGear.Mobile.Auth;
 
 namespace AeroGear.Mobile.Auth
 {
@@ -27,7 +24,7 @@ namespace AeroGear.Mobile.Auth
         /// <param name="authConfig">Authentication config.</param>
         public override void Configure(AuthenticationConfig authConfig)
         {
-            Authenticator = new OIDCAuthenticator(authConfig, KeycloakConfig, CredentialManager, MobileCore.HttpLayer, MobileCore.Logger);
+            Authenticator = new OIDCAuthenticator(authConfig, KeycloakConfig, CredentialManager, Core.HttpLayer, Core.Logger);
         }
 
         /// <summary>
@@ -53,7 +50,7 @@ namespace AeroGear.Mobile.Auth
         /// <param name="config">The service configuration. If <code>null</code> then <code>MobileCore.GetServiceConfiguration(Type)</code> is used.</param>
         public static IAuthService InitializeService(MobileCore core = null, ServiceConfiguration config = null)
         {
-            return MobileCore.Instance.RegisterService<IAuthService>(new AuthService(core, config));
+            return (core ?? MobileCore.Instance).RegisterService<IAuthService>(new AuthService(core, config));
         }
     }
 }
